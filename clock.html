@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoDen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+
+    <script>
+         var alarm_time;
+        function set_alarm(event)
+       {
+          let success = document.querySelector("#suc");
+          var time_picker = document.querySelector('input[id="alarm_time"]');
+          alarm_time = time_picker.value;
+          success.innerHTML = "<br> Alarm set for " + alarm_time;
+        }
+        function stop_alarm()
+        {
+          alarm_time = NULL;
+        }
+        function play_alarm()
+        {
+          alarm_sound = new Audio ('alarm_2.m4a');
+          let mins = new Date().getMinutes();
+          let hours = new Date().getHours();
+          if (hours < 10)
+          {
+            hours = 0 +""+ hours;
+          }
+          time = hours+":"+mins;
+          //console.log("got into play_alarm at "+ time +" and alarm_time is set at "+alarm_time);
+
+          if (time == alarm_time)
+          {
+            //console.log("got into true at "+ time);
+            alarm_sound.play();
+          }
+
+
+        }
+
+        document.addEventListener ('DOMContentLoaded', function(){
+
+        set_secs();
+
+
+
+       var i_secs = setInterval(set_secs, 1000);
+
+       function set_secs()
+       {
+            let secs = new Date().getSeconds();
+            if (secs < 10){
+                document.querySelector ('#SS').innerHTML = ("0"+secs);
+            }
+
+            else
+            {
+                document.querySelector ('#SS').innerHTML = secs;
+            }
+            set_mins();
+            set_hours();
+            play_alarm();
+       }
+
+       function set_mins()
+       {
+
+            let mins = new Date().getMinutes();
+            if (mins<10)
+            {
+                document.querySelector ('#MM').innerHTML = "0"+mins;
+            }
+            else
+            {
+                document.querySelector ('#MM').innerHTML = mins;
+            }
+
+       }
+
+       function set_hours()
+       {
+            let hours = new Date().getHours();
+            if (hours < 10)
+            {
+                document.querySelector ('#HH').innerHTML = "0"+hours;
+            }
+            else
+            {
+                document.querySelector ('#HH').innerHTML = hours;
+            }
+
+       }
+
+
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-prim sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="logo.png" id="logo" class="container" alt="CoDen Logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Projects
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="clock.html">Alarm Clock</a></li>
+                      <li><a class="dropdown-item" href="tuningfork.html">Tuning Fork</a></li>
+                      <li><a class="dropdown-item" href="babytrack.html">Baby Sleep Tracker</a></li>
+                    </ul>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">RC-505!</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    </header>
+    <main>
+        <h1>TIME: <span id="HH"></span>:<span id="MM"></span>:<span id="SS"></span></h1>
+        <form>
+          <input type="time" id="alarm_time">
+           <button class="btn btn-primary" onclick="set_alarm(event); return false;" id="setA"> Set Alarm</button>
+           <button class="btn btn-primary" onclick="stop_alarm(event); return false;" id="stop"> Stop Alarm</button>
+        </form>
+        <p id="suc">
+
+        </p>
+        <div class="center">
+            // Implemented Functions:
+            <ul class="list-group" style="text-align:left">
+              <li class="list-item">// Pick alarm time.</li>
+              <li>// Activate the Alarm button.</li>
+              <li>// Play sound when an alarm starts</li>
+              <li>// Stop Alarm Button.</li>
+            </ul>
+<hr>
+          // Additional Ideas
+          <ul class="list-group" style="text-align:left">
+            <li>// Loop + Play a sound completley before the next loop!</li>
+            <li>// Set days of the week OR Specific Day where alarm is active.</li>
+            <li>// Choose from multiple Alarm-Sounds</li>
+            <li>// Choose from a tange of Background patterns</li>
+            <li>// Switch between 24 and 12 hour clock</li>
+          </ul>
+
+
+        </div>
+    </main>
+
+</body>
+</html>
