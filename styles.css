@@ -84,8 +84,6 @@ a img{
 
 a img:hover
 {
-    //animation-name: grow;
-    //animation-duration: 2s;
     transform: scale(1.1);
 }
 
@@ -94,12 +92,11 @@ h3{
     margin-top:5vh;
 }
 
-.divider{
-    height:8vh;
-    background: #59bfca;
-}
 #welcome{
     background:#FFFBFE;
+    position: relative;
+    top:-300px;
+    border-top: 8vh solid #59bfca;
 }
 .projs{
     //display: flex;
