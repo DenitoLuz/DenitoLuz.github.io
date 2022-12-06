@@ -30,13 +30,18 @@
           if (hours < 10)
           {
             hours = 0 +""+ hours;
+
+          }
+          if (mins < 10){
+            mins = 0 +""+mins;
           }
           time = hours+":"+mins;
+          console.log(time)
           //console.log("got into play_alarm at "+ time +" and alarm_time is set at "+alarm_time);
 
           if (time == alarm_time)
           {
-            //console.log("got into true at "+ time);
+            console.log("got into true at "+ time);
             alarm_sound.play();
           }
 

@@ -6,17 +6,29 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="styles.css" rel="stylesheet">
         <style>
-            #head-img2{
-    background-image: url("imgProjA.jpg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size:cover;
-    min-height:60vh;
-    display:flex;
-    align-items:center;
-}
+            
         </style>
+        <script>
+          
+          document.addEventListener("DOMContentLoaded", ()=>{
+            let moretxt= document.querySelector('.project-more');
+            moretxt.style.display = 'none';
+            document.querySelector("#more").addEventListener('click', function(){
+              if (moretxt.style.display === 'none'){
+                moretxt.style.display = 'block';
+                console.log(moretxt.style.display);
+                document.querySelector("#more").innerHTML="Read Less";
+              }
+              else{
+                moretxt.style.display = 'none';
+                document.querySelector("#more").innerHTML="Read More";
+              }
+              console.log(moretxt.style.display);
+
+          });
+        });
+        </script>
+
         <title>CoDen - Tuningfork</title>
     </head>
     <body>
@@ -54,12 +66,12 @@
         </div>
       </nav>
           <main>
-            <section id="head-img2">
+            <section id="head-img" class="bg-stars">
               <img alt="babyfeet" src="baby.jpg" style="border-radius:50%; border: 2px solid #fff; padding:5px; text-align:center; margin:auto; max-width: 20%; filter:drop-shadow(0px 0px 2vh #808379)" class="">
               </section>
-               <article class ="project-container" style="">
+               <article class ="project-container">
 
-                <h1>Baby Sleep Tracker</h1>
+                
                 
 
                 <div class="project-content">
@@ -96,35 +108,41 @@
                           </tbody>
                         </table>
                     </div>
-                <div class="project-description" >
+                
+                <div class="project-description">
+                  
                 <h3>My Harvard CS50x Final-Project</h3>
                 <p> This Project was developed for <a href="https://cs50.harvard.edu/x/2022/">Harvard's CS50x - Introduction to Computer Science</a>, a MOOC course I completed in August 2022.</p>
-                
+                <button id="more">Read More</button>
+                <div class="project-more">
+                  <h5>Idea and Technology</h5>
+                  <p>The task was to create any type of software solution that involved programming. Since I had been excited about learning Python and the Flask framework I decided to go for this relatively simple web application. I had also recently become a father and my wife kept writing down when our newborn would sleep, which inspired me to make this raw data a little more useful.</p>
+                  <h5>Functionality</h5>
+                  <h6>Importing existing Data</h6>
+                  <p>First I needed to Import the Data I already had. This came in the form of a chat-log. I solved getting the data into the SQLite3 DB by reading the text-file with some Regular expressions. The code then saved the sleep and wake-up times as Date-Time objects in the database.</p>
+                  <h6>Users</h6>
+                  <p>As a basis I was able to use the authentication method from a previous CS50 prject. A table stores users, and their password hashmaps. Another table stores indivdual babies, which are connected to the correct user ID (in other words to each parent)</p>
+                  <h6>Tracking the Time</h6>
+                  <p>This was built using some JavaScript to get the local time and a simple HTML form which can be submitted to be handled by Flask and added to the Database</p>
+                  <h6>Statistical Data</h6>
+                  <p>To present the data I decided that a simple table would suffice. If there are enough dataentries for a selected baby, users can get the info on:
+                    <ul>
+                      <li>Average time spent napping per day</li>
+                      <li>Average time spent sleeping at night</li>
+                      <li>Average time per nap</li>
+                      <li>Average bedtime</li>
+                      <li>Average waketime</li>
+                      <li>Top 3 Sleep times</li>
+                      <li>Top 3 Sleep timeframes (+-10min)</li>
+                    </ul>
+                  </p>
+                </div>
                 <h5>Demonstration</h5>
 
                 <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/mNka-mV02UI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 
-                <h5>Idea and Technology</h5>
-                <p>The task was to create any type of software solution that involved programming. Since I had been excited about learning Python and the Flask framework I decided to go for this relatively simple web application. I had also recently become a father and my wife kept writing down when our newborn would sleep, which inspired me to make this raw data a little more useful.</p>
-                <h5>Functionality</h5>
-                <h6>Importing existing Data</h6>
-                <p>First I needed to Import the Data I already had. This came in the form of a chat-log. I solved getting the data into the SQLite3 DB by reading the text-file with some Regular expressions. The code then saved the sleep and wake-up times as Date-Time objects in the database.</p>
-                <h6>Users</h6>
-                <p>As a basis I was able to use the authentication method from a previous CS50 prject. A table stores users, and their password hashmaps. Another table stores indivdual babies, which are connected to the correct user ID (in other words to each parent)</p>
-                <h6>Tracking the Time</h6>
-                <p>This was built using some JavaScript to get the local time and a simple HTML form which can be submitted to be handled by Flask and added to the Database</p>
-                <h6>Statistical Data</h6>
-                <p>To present the data I decided that a simple table would suffice. If there are enough dataentries for a selected baby, users can get the info on:
-                  <ul>
-                    <li>Average time spent napping per day</li>
-                    <li>Average time spent sleeping at night</li>
-                    <li>Average time per nap</li>
-                    <li>Average bedtime</li>
-                    <li>Average waketime</li>
-                    <li>Top 3 Sleep times</li>
-                    <li>Top 3 Sleep timeframes (+-10min)</li>
-                  </ul>
-                </p>
+                
+                
                </div>
 
             </div>
