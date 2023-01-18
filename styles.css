@@ -36,9 +36,13 @@ main{
 }
 .bg-stars{
     background-image: url("bg-stars.jpg");
-    min-height:700px;
+    min-height:300px;
 }
 
+.bg-sky{
+    background-image: url("Sky.jpg");
+    min-height:300px;
+}
 
 #head-img{
     
@@ -152,6 +156,7 @@ h3{
  text-align:center;
  height:100%;
  max-width: 18%;
+ margin-top:2vh;
 }
 
 
@@ -172,7 +177,7 @@ h3{
     50%{opacity: 0.5;max-height: 25%;}
     100%{opacity: 1;max-height: 100%;}
 }
-.project-more p{
+.project-more p, .project-more li{
     animation-name: growmore;
     animation-duration: 1s;
     animation-timing-function: ease-in;
