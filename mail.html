@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <style>
+            
+        </style>
+        <script>
+          
+          document.addEventListener("DOMContentLoaded", ()=>{
+            let moretxt= document.querySelector('.project-more');
+            moretxt.style.display = 'none';
+            document.querySelector("#more").addEventListener('click', function(){
+              if (moretxt.style.display === 'none'){
+                moretxt.style.display = 'block';
+                console.log(moretxt.style.display);
+                document.querySelector("#more").innerHTML="Read Less";
+              }
+              else{
+                moretxt.style.display = 'none';
+                document.querySelector("#more").innerHTML="Read More";
+              }
+              console.log(moretxt.style.display);
+
+          });
+        });
+        </script>
+
+        <title>CoDen</title>
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-lg bg-prim sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="logo.png" id="logo" class="container" alt="CoDen Logo" ></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Projects
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="clock.html">Alarm Clock</a></li>
+                      <li><a class="dropdown-item" href="tuningfork.html">Tuning Fork</a></li>
+                      <li><a class="dropdown-item" href="babytrack.html">Baby Sleep Tracker</a></li>
+                    </ul>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">RC-505!</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+          <main>
+            <!-- <section id="head-img" class="bg-sky">
+              <img alt="books" src="books.jpg" style="border-radius:50%; border: 2px solid #fff; padding:5px; text-align:center; margin:auto; max-width: 20%; filter:drop-shadow(0px 0px 2vh #808379)" class=""> 
+              </section> -->
+               <article class ="project-container">
+
+                
+                
+
+                <div class="project-content">
+                    <div class="project-overview" >
+                        <img alt="books"  src="books.jpg" style="height: 200px; width: 200px; ">
+                        <table class="table" style="text-align:left;">
+                          <thead>
+                            <tr>
+                              <th scope="col">Key</th>
+                              <th scope="col">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Language(s)</td>
+                              <td>JavaScript, HTML/CSS, Python</td>
+                            </tr>
+                            <tr>
+                              <td>Runs on</td>
+                              <td>Webbrowser</td>
+                            </tr>
+                            <tr>
+                              <td>Frameworks</td>
+                              <td>django</td>
+                            </tr>
+                            <tr>
+                              <td>Lines of code</td>
+                              <td>874</td>
+                            </tr>
+                            <tr>
+                              <td>GitHub</td>
+                              <td>Currently Private</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                
+                <div class="project-description">
+                  
+                <h3>CS50W Project 3 - Mail</h3>
+                <p> This Project was developed for the edX Harvard Course <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript">CS50's Web Programming with Python and JavaScript</a>. The Task was to "Design a front-end for an email client that makes API calls to send and receive emails." The client only simulated E-Mails within the platform.</p>
+                <button id="more">Read More</button>
+                <div class="project-more">
+                  <h5>Course Specification</h5>
+                  <p>Below you will find the Project Specifications which my solution had to adhere to. You may find the original on the <a href="https://cs50.harvard.edu/web/2020/projects/3/mail/#specification" >Coursepage of CS50W</a>.</p>
+                  <ul class="fa-ul">
+                    <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><strong>Send Mail</strong>: When a user submits the email composition form, add JavaScript code to actually send the email.
+                      <ul class="fa-ul">
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You’ll likely want to make a <code class="language-plaintext highlighter-rouge">POST</code> request to <code class="language-plaintext highlighter-rouge">/emails</code>, passing in values for <code class="language-plaintext highlighter-rouge">recipients</code>, <code class="language-plaintext highlighter-rouge">subject</code>, and <code class="language-plaintext highlighter-rouge">body</code>.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Once the email has been sent, load the user’s sent mailbox.</li>
+                      </ul>
+                    </li>
+                    <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><strong>Mailbox</strong>: When a user visits their Inbox, Sent mailbox, or Archive, load the appropriate mailbox.
+                      <ul class="fa-ul">
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You’ll likely want to make a <code class="language-plaintext highlighter-rouge">GET</code> request to <code class="language-plaintext highlighter-rouge">/emails/&lt;mailbox&gt;</code> to request the emails for a particular mailbox.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>When a mailbox is visited, the application should first query the API for the latest emails in that mailbox.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>When a mailbox is visited, the name of the mailbox should appear at the top of the page (this part is done for you).</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Each email should then be rendered in its own box (e.g. as a <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> with a border) that displays who the email is from, what the subject line is, and the timestamp of the email.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>If the email is unread, it should appear with a white background. If the email has been read, it should appear with a gray background.</li>
+                      </ul>
+                    </li>
+                    <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><strong>View Email</strong>: When a user clicks on an email, the user should be taken to a view where they see the content of that email.
+                      <ul class="fa-ul">
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You’ll likely want to make a <code class="language-plaintext highlighter-rouge">GET</code> request to <code class="language-plaintext highlighter-rouge">/emails/&lt;email_id&gt;</code> to request the email.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Your application should show the email’s sender, recipients, subject, timestamp, and body.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You’ll likely want to add an additional <code class="language-plaintext highlighter-rouge">div</code> to <code class="language-plaintext highlighter-rouge">inbox.html</code> (in addition to <code class="language-plaintext highlighter-rouge">emails-view</code> and <code class="language-plaintext highlighter-rouge">compose-view</code>) for displaying the email. Be sure to update your code to hide and show the right views when navigation options are clicked.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>See the hint in the Hints section about how to add an event listener to an HTML element that you’ve added to the DOM.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Once the email has been clicked on, you should mark the email as read. Recall that you can send a <code class="language-plaintext highlighter-rouge">PUT</code> request to <code class="language-plaintext highlighter-rouge">/emails/&lt;email_id&gt;</code> to update whether an email is read or not.</li>
+                      </ul>
+                    </li>
+                    <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><strong>Archive and Unarchive</strong>: Allow users to archive and unarchive emails that they have received.
+                      <ul class="fa-ul">
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>When viewing an Inbox email, the user should be presented with a button that lets them archive the email. When viewing an Archive email, the user should be presented with a button that lets them unarchive the email. This requirement does not apply to emails in the Sent mailbox.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Recall that you can send a <code class="language-plaintext highlighter-rouge">PUT</code> request to <code class="language-plaintext highlighter-rouge">/emails/&lt;email_id&gt;</code> to mark an email as archived or unarchived.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Once an email has been archived or unarchived, load the user’s inbox.</li>
+                      </ul>
+                    </li>
+                    <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><strong>Reply</strong>: Allow users to reply to an email.
+                      <ul class="fa-ul">
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>When viewing an email, the user should be presented with a “Reply” button that lets them reply to the email.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>When the user clicks the “Reply” button, they should be taken to the email composition form.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Pre-fill the composition form with the <code class="language-plaintext highlighter-rouge">recipient</code> field set to whoever sent the original email.</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Pre-fill the <code class="language-plaintext highlighter-rouge">subject</code> line. If the original email had a subject line of <code class="language-plaintext highlighter-rouge">foo</code>, the new subject line should be <code class="language-plaintext highlighter-rouge">Re: foo</code>. (If the subject line already begins with <code class="language-plaintext highlighter-rouge">Re: </code>, no need to add it again.)</li>
+                        <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Pre-fill the <code class="language-plaintext highlighter-rouge">body</code> of the email with a line like <code class="language-plaintext highlighter-rouge">"On Jan 1 2020, 12:00 AM foo@example.com wrote:"</code> followed by the original text of the email.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                
+
+            </div>
+            
+            <h5>Demonstration</h5>
+            <iframe class ="video" width="560" height="315" src="https://www.youtube.com/embed/VKM_BVO7914" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          
+          </article>
+
+            </section>
+        </main>
+
+    </body>
+</html>
