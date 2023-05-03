@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <style>
+            
+        </style>
+        <script>
+          
+          document.addEventListener("DOMContentLoaded", ()=>{
+            let moretxt= document.querySelector('.project-more');
+            moretxt.style.display = 'none';
+            document.querySelector("#more").addEventListener('click', function(){
+              if (moretxt.style.display === 'none'){
+                moretxt.style.display = 'block';
+                console.log(moretxt.style.display);
+                document.querySelector("#more").innerHTML="Read Less";
+              }
+              else{
+                moretxt.style.display = 'none';
+                document.querySelector("#more").innerHTML="Read More";
+              }
+              console.log(moretxt.style.display);
+
+          });
+        });
+        </script>
+
+        <title>CoDen</title>
+    </head>
+    <body>
+
+     
+      <nav class="navbar navbar-expand-lg bg-prim sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="logo.png" id="logo" class="container" alt="CoDen Logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Projects
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="babytrack.html">Baby Sleep Tracker</a></li>
+                      <li><a class="dropdown-item" href="clock.html">Alarm Clock</a></li>
+                      <li><a class="dropdown-item" href="wiki.html">Wiki</a></li>
+                      <li><a class="dropdown-item" href="commerce.html">Commerce</a></li>
+                      <li><a class="dropdown-item" href="mail.html">Mail</a></li>
+                      <li><a class="dropdown-item" href="socialnetwork.html">Social Network</a></li>
+                      <li><a class="dropdown-item" href="yummyplanner.html">CS50W Capstone</a></li>
+                      
+                    </ul>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About me</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">RC-505!</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+          <main>
+            <!-- <section id="head-img" class="bg-sky">
+              <img alt="books" src="books.jpg" style="border-radius:50%; border: 2px solid #fff; padding:5px; text-align:center; margin:auto; max-width: 20%; filter:drop-shadow(0px 0px 2vh #808379)" class=""> 
+              </section> -->
+               <article class ="project-container">
+
+                
+                
+
+                <div class="project-content">
+                    <div class="project-overview" >
+                        <img alt="mail"  src="logoyummy.png" style="height: 200px; width: 200px; ">
+                        <table class="table" style="text-align:left;">
+                          <thead>
+                            <tr>
+                              <th scope="col">Key</th>
+                              <th scope="col">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Language(s)</td>
+                              <td>JavaScript, HTML/CSS, Python</td>
+                            </tr>
+                            <tr>
+                              <td>Runs on</td>
+                              <td>Webbrowser</td>
+                            </tr>
+                            <tr>
+                              <td>Frameworks</td>
+                              <td>django</td>
+                            </tr>
+                            <tr>
+                              <td>Lines of code</td>
+                              <td>uncounted</td>
+                            </tr>
+                            <tr>
+                              <td>GitHub</td>
+                              <td>Private</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                
+                <div class="project-description">
+                  
+                <h3>CS50W Capstone Project - Yummy Planner</h3>
+                <p> This Project was developed for the edX Harvard Course <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript">CS50's Web Programming with Python and JavaScript</a>. The Task was to "Designing and implementing a web application of your own with Python and JavaScript."</p>
+                <button id="more">Read More</button>
+                <div class="project-more">
+                  <h5>Course Specification</h5>
+                  <p>Below you will find the Project Specifications which my solution had to adhere to. You may find the original on the <a href="https://cs50.harvard.edu/web/2020/projects/3/mail/#specification" >Coursepage of CS50W</a>.</p>
+
+                  <p>In this project, you are asked to build a web application of your own. The nature of the application is up to you, subject to a few requirements:</p>
+                <ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Your web application must be sufficiently distinct from the other projects in this course (and, in addition, may not be based on the <a href="https://docs.cs50.net/web/2020/x/projects/3/project3.html">old CS50W Pizza project</a>), and more complex than those.
+    <ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>A project that appears to be a social network is <em>a priori</em> deemed by the staff to be indistinct from Project 4, and should not be submitted; it will be rejected.</li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>A project that appears to be an e-commerce site is <em>strongly suspected</em> to be indistinct from Project 2, and your <code class="language-plaintext highlighter-rouge">README.md</code> file should be very clear as to why it’s not. Failing that, it should not be submitted; it will be rejected.</li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Your web application must utilize Django (including at least one model) on the back-end and JavaScript on the front-end.</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Your web application must be mobile-responsive.</li>
+</ul>
+
+<h3>Below you will find my Readme.md</h3>
+
+<h2>"Yummy Planner" Readme</h2>
+<h3>Short Description</h3>
+<p>This CS50W Capstone Project "Yummy Planner" is a Platform in which users can add and share recipes, plan out meals in a calender and add the ingredients they need to cook those meals in a shopping list.</p>
+<h3>How to run</h3>
+<p>Once all files are downloaded</p>
+<p>Install virtual environment with python 3.10.4 installed and run </p>
+<pre>env/bin/activate</pre>
+<p>Now...</p>
+<pre>cd to yummy </pre>
+<p>then run</p>
+<pre>python3 manage.py makemigrations</pre>
+<p>then</p>
+<pre>python3 manage.py migrate</pre>
+<p>then create a superuser</p>
+<pre>python3 manage.py createsuperuser</pre>
+<p>Follow the prompts to create the user.</p>
+<p>then</p>
+<pre>python3 manage.py runserver</pre>
+<p>then open 127.0.0.1:8000 in Webbrowser. Now you can login with the superuser, or register an new user.</p>
+<h3>What's contained in the files I created (besides the initial Django files)?</h3>
+<p>The project contains one Django application called planner. Within the planner file structure the template folder was created with the "planner" folder for the apps html templates. The "registration" folder was created to contain the registration form for new users, and the login form. This was required by Django's built in authentication "django.contrib.auth". Furthermore I added a models.py file as a means to create Django ModelForms, which made it easier and quicker to generate HTML forms. Lastly there is a folder, where the recipe images uploaded by users are stored.</p>
+<h3>Distinctiveness and Complexity</h3>
+<h4>Why I created the Application</h4>
+<p>After my first attempted Capstone project idea turned out to be too complex and unfinishable, I returned to the drawing board.</p>
+<p>I came up with the idea improve on tasks that take up quite a bit of time in my life: </p>
+<ul>
+<li>deciding what to cook </li>
+<li>shopping the ingredients </li>
+<li>and cooking (new) meals. </li>
+</ul>
+<p>Having a repertoire of meals can be quite helpful, and having a digital record of that repertoire, even more so. As a means to facilitate meal planning, a calendar would be helpful, to which meals from the repertoire could be added quickly and easily. Besides needing to prepare when the meal is to be cooked, a shopping list generated from the recipes will help when buying all the ingredients. The app should need to allow users to individually select ingredients from a recipe or add all ingredients from that recipe. Additionally users need to be able to add custom elements to the shopping list.</p> 
+<p>Implementing these functions makes my app distinctive from previous projects in this course, since, besides being an original idea, they include the implementation of Django functionalities not covered in CS50W. The use of DateTime objects, regular expressions, multiple related models, model forms, file upload, deciding the complete code architecture, using mainly custom CSS, plus figuring out how to use Djano's built-in authentication should satisfy the complexity requirements. In the next section, all implemented functions will be described to further support my case.</p>
+<h4>Overview of implemented Functions</h4>
+<h5>Authentification</h5>
+<ul>
+<li>Users are able to: Register, Login, Logout (in previous Projects this was preimplemented. In this app I had to figure it out using external resources.)
+    </li>
+
+    <h4>Add a Recipe</h4>
+<ul>
+  <li>Users are able to add new recipes filling out the following form fields: name, description, upload an image, preparation time, cooking time, serving size, ingredients list and instructions.</li>
+  <li>Ingredients and their respective amounts are stored seperately, as to ensure that ingredients are only stored once. (Metric and short form e.g. "tsp" only)</li>
+</ul>
+<h4>My Recipes and Recipe Pages</h4>
+<ul>
+  <li>users can see their own recipes in an overview</li>
+  <li>Each recipe is displayed in its own page with all necessary information</li>
+  <li>Ingredients from the recipe can be added indidually or completly to the shopping list</li>
+  <li>Recipes can be added to the meal calendar
+    <ul>
+      <li>If a recipe is added to the calendar, the recipe page includes the date and mealtime for when it is planned. Mealtimes are either breakfast, lunch or dinner.</li>
+      <li>If a planned meal is in the past, the user can see the history of that recipe (hidden by default) within the recipe page.</li>
+    </ul>
+  </li>
+</ul>
+<h4>Browse Recipes</h4>
+<ul>
+  <li>Here all recipes from all users are displayed so that they may be browse and added to the personal meal, planning calendar</li>
+</ul>
+<h4>Meal calendar</h4>
+<ul>
+  <li>Here in typical calendar view shows current month</li>
+  <li>Navigation buttons can let users change which month is viewed</li>
+  <li>In each day, the meals planned for that day and the attributed mealtimes are shown. They act as a link to the respective recipe page.</li>
+  <li>Recipes in the past can be marked as cooked or can be deleted from the history (in case the user did not cook the meal and wishes to remove it from the history)</li>
+  <li>If a meal is marked as cooked, it is shown as crossed out (line-though) in the calendar and the history shown in the recipe page</li>
+  <li>The coloured day in the calendar indicates the current date</li>
+</ul>
+<h4>Shopping list</h4>
+<ul>
+  <li>The shopping list displays all individual ingredients added from recipes</li>
+  <li>If an ingredient was added multiple times, the ingredient only appears once in the list and the amounts from each time the ingredient was added are listed behind the ingredient</li>
+  <li>These amounts behind each ingredient item are a link to the recipe they originated from</li>
+  <li>Users can cross off the individual items while shopping, and once the shopping is complete, they can save the changes to the shopping list (in other words, remove the items that were crossed off)</li>
+  <li>Additional items which are not included in a recipe can be added to and checked off in a separate list displayed and next to the recipe ingredients</li>
+</ul>
+<h2>Future Ideas</h2>
+<p>The index page and "Home" link was left blank on purpose, as a reminder to myself to implement further functions, which go beyond the submission of this project.</p>
+<p>Planning future functions, i.e. considering the scalability was a key in designing this Django application, further supporting my case for distinctiveness and complexity.</p>
+<p>Future Ideas for added functionality are listed in the following sections.</p>
+<h3>Additional functionality for "Add a Recipe"</h3>
+<ul>
+  <li>Handle imperial system</li>
+  <li>Edit a Recipe</li>
+  <li>Delete a Recipe</li>
+</ul>
+<h2>Additional functionality for "Browse Recipes"</h2>
+<ul>
+  <li>Add other users recipes to the "My Recipes" Overview</li>
+  <li>Search recipes by prep time, cooking time, and individual ingredients</li>
+</ul>
+<h2>Thank you</h2>
+<p>I would like to thank Harvard and the CS50 team for this amazing course. Thank you, whoever is reading this, for taking the time to check my Capstone project. Drop me a comment under the screencast if you like! It would be great to connect.</p>
+
+
+            </div>
+            
+            <h5>Demonstration</h5>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7U1FncEc9uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          
+          </article>
+
+            </section>
+        </main>
+
+    </body>
+</html>
